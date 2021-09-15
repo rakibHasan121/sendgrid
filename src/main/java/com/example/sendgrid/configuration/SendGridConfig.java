@@ -17,7 +17,7 @@ public class SendGridConfig {
 
     @Bean
     public SendGrid getSendgrid() {
-        return new SendGrid(key);
+        return new SendGrid(System.getenv("SENDGRID_API_KEY"));
     }
 
 }

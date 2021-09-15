@@ -23,10 +23,12 @@ public class EmailService {
     @Autowired
     private SendGrid sendGrid;
 
+    private Email myemail = new Email("noreply.hakimlivs@gmail.com");
+
     public Response sendmail(EmailRequest emailRequest) {
 
-        Mail mail = new Mail(new Email("rakib121@gmail.com"), emailRequest.getSubject(), new Email(emailRequest.getTo()), new Content("text/plain", emailRequest.getBody()));
-        mail.setReplyTo(new Email("rakib121@gmail.com"));
+        Mail mail = new Mail(myemail, emailRequest.getSubject(), new Email(emailRequest.getTo()), new Content("text/plain", emailRequest.getBody()));
+        mail.setReplyTo(myemail);
         Request request = new Request();
         Response response = null;
         try {
