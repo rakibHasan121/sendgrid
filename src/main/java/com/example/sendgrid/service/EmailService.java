@@ -23,7 +23,7 @@ public class EmailService {
     @Autowired
     private SendGrid sendGrid;
 
-    private Email myemail = new Email("rakib121@gmail.com");
+    private Email myemail = new Email("noreply.hakimlivs@gmail.com");
 
 
     public Response sendmail(EmailRequest emailRequest) {

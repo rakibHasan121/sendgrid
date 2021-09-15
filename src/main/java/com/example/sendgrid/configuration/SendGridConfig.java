@@ -11,12 +11,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class SendGridConfig {
-//    @Value("${sendgrid.key}")
-//    private String key;
-
     @Bean
     public SendGrid getSendgrid() {
         return new SendGrid(System.getenv("SENDGRID_API_KEY"));
     }
-
 }
